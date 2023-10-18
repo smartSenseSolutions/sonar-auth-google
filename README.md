@@ -1,13 +1,9 @@
 
 # Google Authentication Plug-in for SonarQube #
-[![Build Status](https://api.travis-ci.org/InfoSec812/sonar-auth-google.svg)](https://travis-ci.org/InfoSec812/sonar-auth-google)[![Known Vulnerabilities](https://snyk.io/test/github/InfoSec812/sonar-auth-google/badge.svg?targetFile=pom.xml)](https://snyk.io/test/github/InfoSec812/sonar-auth-google?targetFile=pom.xml)
-
-
 
 ## Description ##
 This plugin enables user authentication and Single Sign-On via [Google](https://google.com/).
-It is heavily based on the code by [Julien Lancelot](https://github.com/SonarQubeCommunity/sonar-auth-bitbucket)
-Compatible with SonarQube version 5.6 and higher.
+Compatible with SonarQube version 10.2.1.78527 and higher.
 
 ## Feedback Process ##
 * [Releases](releases/) are created with every SNAPSHOT, but only non-SNAPSHOT releases are added to the Update Center
