@@ -43,8 +43,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
     <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
     <sonar.cobertura.reportPath>${project.basedir}/target/site/cobertura/coverage.xml</sonar.cobertura.reportPath>
     <sonar.language>java</sonar.language>
@@ -64,9 +64,9 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.sonarsource.sonarqube</groupId>
-      <artifactId>sonar-plugin-api</artifactId>
-      <version>5.4</version>
+      <groupId>org.sonarsource.api.plugin</groupId>
+        <artifactId>sonar-plugin-api</artifactId>
+      <version>11.0.0.2664</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
@@ -80,10 +80,9 @@
       <version>2.3.1</version>
     </dependency>
     <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>javax.servlet-api</artifactId>
-      <version>3.0.1</version>
-      <scope>provided</scope>
+      <groupId>jakarta.servlet</groupId>
+      <artifactId>jakarta.servlet-api</artifactId>
+      <version>6.0.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.code.findbugs</groupId>
@@ -145,7 +144,7 @@
       <plugin>
         <groupId>org.sonarsource.sonar-packaging-maven-plugin</groupId>
         <artifactId>sonar-packaging-maven-plugin</artifactId>
-        <version>1.15</version>
+        <version>1.18.0.372</version>
         <extensions>true</extensions>
         <configuration>
           <pluginClass>org.sonarqube.auth.googleoauth.AuthGooglePlugin</pluginClass>

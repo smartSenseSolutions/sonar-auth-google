@@ -42,18 +42,23 @@ package org.sonarqube.auth.googleoauth;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+
+import java.util.Map;
+
 import org.sonar.api.config.PropertyDefinitions;
 import org.sonar.api.config.Settings;
+import org.sonar.api.config.internal.MapSettings;
 import org.sonar.api.server.authentication.UserIdentity;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import org.sonar.api.utils.System2;
 
 public class UserIdentityFactoryTest {
 
   @Rule
   public ExpectedException expectedException = ExpectedException.none();
 
-  Settings settings = new Settings(new PropertyDefinitions(GoogleSettings.definitions()));
+  MapSettings settings = new MapSettings(new PropertyDefinitions(System2.INSTANCE, GoogleSettings.definitions()));
   UserIdentityFactory underTest = new UserIdentityFactory(new GoogleSettings(settings));
 
   /**

@@ -44,12 +44,14 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.sonar.api.config.PropertyDefinitions;
 import org.sonar.api.config.Settings;
+import org.sonar.api.config.internal.MapSettings;
 import org.sonar.api.server.authentication.OAuth2IdentityProvider;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import org.sonar.api.utils.System2;
 import static org.sonarqube.auth.googleoauth.GoogleSettings.LOGIN_STRATEGY_DEFAULT_VALUE;
 
 public class GoogleIdentityProviderTest {
@@ -57,7 +59,7 @@ public class GoogleIdentityProviderTest {
   @Rule
   public ExpectedException thrown = ExpectedException.none();
 
-  Settings settings = new Settings(new PropertyDefinitions(GoogleSettings.definitions()));
+  MapSettings settings = new MapSettings(new PropertyDefinitions(System2.INSTANCE, GoogleSettings.definitions()));
   GoogleSettings googleSettings = new GoogleSettings(settings);
   UserIdentityFactory userIdentityFactory = mock(UserIdentityFactory.class);
   GoogleScribeApi scribeApi = new GoogleScribeApi(googleSettings);

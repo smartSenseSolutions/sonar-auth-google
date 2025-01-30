@@ -46,10 +46,11 @@ import org.junit.Test;
 import org.sonar.api.config.Settings;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import org.sonar.api.config.internal.MapSettings;
 
 public class GoogleScribeApiTest {
 
-  GoogleScribeApi underTest = new GoogleScribeApi(new GoogleSettings(new Settings()));
+  GoogleScribeApi underTest = new GoogleScribeApi(new GoogleSettings(new MapSettings()));
 
   @Test
   public void getAccessTokenEndpoint() {

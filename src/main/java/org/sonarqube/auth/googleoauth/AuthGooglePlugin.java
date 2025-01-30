@@ -39,20 +39,12 @@ package org.sonarqube.auth.googleoauth;
  * #L%
  */
 
-import org.sonar.api.SonarPlugin;
+import org.sonar.api.Plugin;
 
-import java.util.ArrayList;
-import java.util.List;
+public class AuthGooglePlugin implements Plugin {
 
-public class AuthGooglePlugin extends SonarPlugin {
   @Override
-  public List getExtensions() {
-    List extensions = new ArrayList();
-    extensions.add(GoogleSettings.class);
-    extensions.add(UserIdentityFactory.class);
-    extensions.add(GoogleIdentityProvider.class);
-    extensions.add(GoogleScribeApi.class);
-    extensions.addAll(GoogleSettings.definitions());
-    return extensions;
+  public void define(Context context) {
+    context.addExtensions(GoogleSettings.class, UserIdentityFactory.class, GoogleIdentityProvider.class, GoogleScribeApi.class, GoogleSettings.definitions());
   }
 }
